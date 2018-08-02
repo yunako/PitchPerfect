@@ -12,8 +12,6 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
 
-    
-    
     @IBOutlet weak var snailButton: UIButton!
     @IBOutlet weak var chipmunkButton: UIButton!
     @IBOutlet weak var rabbitButton: UIButton!
@@ -28,7 +26,7 @@ class PlaySoundsViewController: UIViewController {
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
     
-    enum ButtonTpe: Int { case slow = 0, fast, chipmunk, vader, echo, reverb }
+    enum ButtonType: Int { case slow = 0, fast, chipmunk, vader, echo, reverb }
     @IBAction func playSoundForButton(_ sender: UIButton){
         //print("play sound button pressed")
         switch(ButtonType(rawValue: sender.tag)!) {
