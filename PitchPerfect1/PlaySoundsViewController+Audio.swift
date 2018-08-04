@@ -6,11 +6,6 @@
 //  Copyright © 2018년 YUNA KO. All rights reserved.
 //
 //
-//  PlaySoundsViewController+Audio.swift
-//  PitchPerfect
-//
-//  Copyright 짤 2016 Udacity. All rights reserved.
-//
 
 import UIKit
 import AVFoundation
@@ -48,7 +43,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             showAlert(Alerts.AudioFileError, message: String(describing: error))
         }
     }
-    
+
     func playSound(rate: Float? = nil, pitch: Float? = nil, echo: Bool = false, reverb: Bool = false) {
         
         // initialize audio engine components
@@ -109,6 +104,9 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             self.stopTimer = Timer(timeInterval: delayInSeconds, target: self, selector: #selector(PlaySoundsViewController.stopAudio), userInfo: nil, repeats: false)
             RunLoop.main.add(self.stopTimer!, forMode: RunLoopMode.defaultRunLoopMode)
         }
+        
+        
+
         
         do {
             try audioEngine.start()
